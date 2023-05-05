@@ -2,7 +2,7 @@ pipeline {
     agent any stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/ferosekt/HCP'
+                git branch: 'master', url: 'https://github.com/ferosekt/HCP'
             }
         } stage('Build') {
             steps {
