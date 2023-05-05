@@ -1,5 +1,6 @@
 pipeline {
-    agent any stages {
+    agent any
+    stages {
         stage('Checkout') {
             steps {
                 git branch: 'master', url: 'https://github.com/ferosekt/HCP'
