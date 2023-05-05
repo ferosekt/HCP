@@ -10,7 +10,7 @@ pipeline {
             }
         } stage('Run') {
             steps {
-              bat 'aws-springboot.jar'
+              bat 'target\*.jar'
             }
         }
     }
