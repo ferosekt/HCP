@@ -7,6 +7,11 @@ pipeline {
                git branch: 'master', url: 'https://github.com/ferosekt/HCP'
             }
         }
+        stage('Build1') {
+                    steps {
+                        bat 'java -version'
+                    }
+                }
         stage('Build') {
             steps {
                 bat 'mvn clean install'
