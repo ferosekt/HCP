@@ -11,7 +11,7 @@ pipeline {
         } stage('Run') {
             steps {
                 withEnv (['JENKINS_NODE_COOKIE=do_not_kill']) {
-                    bat 'start java -jar target/demo-0.0.1-SNAPSHOT.jar&'
+                    bat 'start java -jar target/aws-springboot.jar.jar&'
                 }
             }
         }
