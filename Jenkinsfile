@@ -10,7 +10,7 @@ pipeline {
             }
         } stage('Run') {
             steps {
-              bat 'start java -jar target\*.jar&'
+              bat 'start java -jar target/*.jar&'
             }
         }
     }
