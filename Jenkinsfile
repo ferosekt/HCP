@@ -1,27 +1,17 @@
 pipeline {
-    agent any
-
-    stages {
-        stage('Bulid') {
+    agent any stages {
+        stage('Checkout') {
             steps {
-                echo 'Bulid App'
+                git branch: 'main', url: 'https://github.com/ferosekt/HCP'
             }
-        }
-        stage('Test') {
+        } stage('Build') {
             steps {
-                echo 'Test App'
+                bat 'mvn clean install'
             }
-        }
-        stage('Deploy') {
+        } stage('Run') {
             steps {
-                echo 'Deploy App'
+                bat 'java -jar target/aws-springboot.jar'
             }
         }
     }
-    post {
-        failure{
-            emailext body: 'Build failure', subject: 'Pipeline Status', to: 'ferosekt64@gmail.com'
-        }
-    }
-
 }
